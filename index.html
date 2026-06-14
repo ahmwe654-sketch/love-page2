@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#060913">
+    <title>عالمنا السري الأبدي ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sky-bg"></div>
+<div id="magicDustContainer"></div>
+
+<div id="timeLockPage" class="start-page">
+    <h1 style="color: var(--main); margin-bottom: 15px;">⏳ دقات قلبي في انتظاركِ ❤️</h1>
+    <p style="max-width: 500px; font-size: 16px; color: #94a3b8; line-height: 1.6;">
+        باقي القليل وتفتح أبواب عالمنا الصغير.. لا يمكن لعقارب الساعة أن تسمح بالدخول إلا في تمام الساعة 12:00 منتصف الليل لتبدأ حكايتنا الكبرى ✨
+    </p>
+    <div id="lockCountdownDisplay" style="font-size: 36px; font-weight: bold; color: var(--main); margin: 20px 0;">00:00:00</div>
+    <button id="btnEnterTimePage" class="btn-nav">اضغطي للدخول إلى عالمنا الآن ✨</button>
+</div>
+
+<div id="passwordPage" class="start-page" style="display:none;">
+    <h2>🔒 ادخلي كلمة السر الخاصة بنا <span class="crown-icon">👑</span></h2>
+    <p style="font-size: 13px; color: #64748b;">(ملاحظة: جربي كتابة \"بحبك\" لفتح المكان السري 👀)</p>
+    <input type="text" id="passwordInput" placeholder="اكتبي الكلمة هنا...">
+    <button id="btnSubmitPassword" class="btn-nav" style="margin-top: 15px;">فتح بوابة قلبي ❤️</button>
+    <p id="errorText" style="color: #ef4444; margin-top: 10px; font-weight: bold;"></p>
+</div>
+
+<div class="container" id="mainContainer">
+    
+    <div class="progress-container" id="progressBar">
+        <div class="progress-step active" data-step="page1"><span class="step-icon">❤️</span><span class="step-label">البداية</span></div>
+        <div class="progress-step" data-step="pageComfort"><span class="step-icon">🫂</span><span class="step-label">أمانك</span></div>
+        <div class="progress-step" data-step="pageDetails"><span class="step-icon">🌸</span><span class="step-label">تفاصيلك</span></div>
+        <div class="progress-step" data-step="pageDreams"><span class="step-icon">🌙</span><span class="step-label">أحلامنا</span></div>
+        <div class="progress-step" data-step="pageFutureLetter"><span class="step-icon">💌</span><span class="step-label">رسالة</span></div>
+        <div class="progress-step" data-step="pageInteraction"><span class="step-icon">🌹</span><span class="step-label">مفاجآت</span></div>
+        <div class="progress-step" data-step="pageGames"><span class="step-icon">🎮</span><span class="step-label">ألعابنا</span></div>
+        <div class="progress-step" data-step="pageMemories"><span class="step-icon">🔮</span><span class="step-label">ذكرياتنا</span></div>
+        <div class="progress-step" data-step="pageAlbum"><span class="step-icon">📸</span><span class="step-label">ألبوم</span></div>
+        <div class="progress-step" data-step="pageChat"><span class="step-icon">💬</span><span class="step-label">رسائلنا</span></div>
+        <div class="progress-step" data-step="pageLoveSlider"><span class="step-icon">💖</span><span class="step-label">المقياس</span></div>
+        <div class="progress-step" data-step="pageVows"><span class="step-icon">📜</span><span class="step-label">وعدنا</span></div>
+        <div class="progress-step" data-step="pageProposal"><span class="step-icon">💍</span><span class="step-label">النهاية</span></div>
+    </div>
+    
+    <div class="live-counter-grid">
+        <div class="counter-item"><div class="counter-num" id="count-days">0</div><div class="counter-label">أيام</div></div>
+        <div class="counter-item"><div class="counter-num" id="count-hours">0</div><div class="counter-label">ساعات</div></div>
+        <div class="counter-item"><div class="counter-num" id="count-mins">0</div><div class="counter-label">دقائق</div></div>
+        <div class="counter-item"><div class="counter-num" id="count-secs">0</div><div class="counter-label">ثواني</div></div>
+    </div>
+    <div style="margin-bottom: 20px; font-size: 14px; color: var(--main); font-weight: bold;">
+        💓 عداد نبضات الحب المشتركة: <span id="liveLovePulses">128400</span> نبضة تزداد كل ثانية!
+    </div>
+
+    <div class="page active" id="page1">
+        <h2>بداية حكايتنا النورانية ✨</h2>
+        <div class="typewriter-text" id="tp_page1"></div>
+        <button class="btn-nav next-trigger" data-next="pageComfort">التالي ➔</button>
+    </div>
+
+    <div class="page" id="pageComfort">
+        <h2>أنتِ في أمان تام معي 🫂💗</h2>
+        <div class="typewriter-text" id="tp_pageComfort"></div>
+        <button class="btn-nav back-trigger" data-back="page1">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageDetails">التالي (تفاصيلكِ) ➔</button>
+    </div>
+
+    <div class="page" id="pageDetails">
+        <h2>تفاصيلكِ الصغيرة التي أعشقها 🌸✨</h2>
+        <div class="typewriter-text" id="tp_pageDetails"></div>
+        <button class="btn-nav back-trigger" data-back="pageComfort">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageDreams">التالي (أحلامنا سوا) ➔</button>
+    </div>
+
+    <div class="page" id="pageDreams">
+        <h2>أحلامنا وعالمنا القادم 🌙✨</h2>
+        <div class="grid-cards">
+            <div class="card-item"><h3>🏠 بيتنا الصغير</h3><p>مكان هادي ومقفل علينا، مليان دفا وأمان وصوت ضحكتك منوراه.</p></div>
+            <div class="card-item"><h3>✈️ أول سفرية لنا</h3><p>إيد في إيد، هنلف الدنيا ونعمل ذكريات وصور في كل مكان بنحبه.</p></div>
+            <div class="card-item"><h3>💍 يوم كتب الكتاب</h3><p>اليوم اللي هعلن فيه قدام الدنيا كلها إنك بقيتي حلالي واسمي ارتبط باسمك.</p></div>
+            <div class="card-item"><h3>👨‍👩‍👧‍👦 عيلتنا المستقبلية</h3><p>أطفال صغيرين يشبهوا طيبتك ونقائك، ونربيهم على الحب الصافي.</p></div>
+        </div>
+        <button class="btn-nav back-trigger" data-back="pageDetails">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageFutureLetter">التالي (رسالة للمستقبل) ➔</button>
+    </div>
+
+    <div class="page" id="pageFutureLetter">
+        <h2>رسالة تفتحيها لما تشتاقيلي 💌</h2>
+        <div id="futureLetterBox" style="display:none;">
+            <div class="typewriter-text" id="tp_futureLetter"></div>
+        </div>
+        <div id="lockLetterZone">
+            <p style="margin-bottom: 15px; color: #94a3b8;">هذه الرسالة تحتوي على مشاعر عميقة جداً من قلبي لكِ..</p>
+            <button id="btnUnlockLetter" class="btn-nav" style="background: #e11d48; color: white;">فتح الرسالة الآن ❤️</button>
+        </div>
+        <div style="margin-top: 15px;">
+            <button class="btn-nav back-trigger" data-back="pageDreams">رجوع</button>
+            <button class="btn-nav next-trigger" data-next="pageInteraction">التالي (التفاعل والمفاجآت) ➔</button>
+        </div>
+    </div>
+
+    <div class="page" id="pageInteraction">
+        <h2>ركن التفاعل والمفاجآت السحرية 🎁</h2>
+        <div class="rose-container">
+            <div class="magic-rose" id="myRose">🌹</div>
+            <div id="roseMessage" style="color: var(--main); font-weight: bold; margin-top: 5px;">اضغطي على الوردة لتتفتح وتُهديكِ حباً..</div>
+        </div>
+        
+        <div style="margin: 20px 0; background: var(--card-bg); padding: 15px; border-radius: 12px; border: 1px solid var(--border);">
+            <h3 style="color: var(--blue); font-size: 16px; margin-bottom: 10px;">🎡 عجلة الحظ الرومانسية</h3>
+            <button id="btnSpinWheel" class="btn-nav" style="background: linear-gradient(135deg, #a855f7, #ec4899); color: white;">لفي العجلة واكتشفي حظك 🎲</button>
+            <div id="wheelResult" style="margin-top: 10px; font-weight: bold; color: var(--main);"></div>
+        </div>
+
+        <div style="margin: 10px 0; font-size: 15px; color: #f59e0b;">
+            💖 عداد ضغطات حبكِ: تم إرسال <span id="loveClickCount" style="font-weight:bold;">0</span> نبضة حب تفاعلية!
+        </div>
+        <div style="margin: 15px 0;">
+            <button id="btnSurprise" class="btn-nav btn-surprise">🎁 صندوق الهدايا العشوائي</button>
+            <button id="btnSad" class="btn-nav btn-sad">🥺 أنا زعلانة ومضايقة</button>
+        </div>
+        <div id="interactionResponseBox" style="background: var(--card-bg); padding: 15px; border-radius: 12px; min-height: 50px; border: 1px dashed var(--border); margin-bottom: 20px;">
+            اضغطي على الصندوق أو زرار الحزن لقراءة رسائل خاصة.. ✨
+        </div>
+        <button class="btn-nav back-trigger" data-back="pageFutureLetter">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageGames">التالي (ألعابنا الخاصة) ➔</button>
+    </div>
+
+    <div class="page" id="pageGames">
+        <h2>🎮 ساحة ألعابنا التفاعلية 🧩</h2>
+        
+        <div class="game-box" style="background: var(--card-bg); padding: 15px; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 15px; text-align: right;">
+            <h3 style="color: var(--blue); font-size: 16px; margin-bottom: 10px; text-align: center;">🎭 سؤال التحدي: من يعرف الآخر أكثر؟</h3>
+            <p id="gameQuestion" style="font-size: 14px; margin-bottom: 10px; text-align: center; font-weight: bold;"></p>
+            <div id="gameOptions" style="display: flex; flex-direction: column; gap: 8px;"></div>
+            <div id="gameFeedback" style="margin-top: 10px; font-weight: bold; text-align: center;"></div>
+        </div>
+
+        <div class="game-box" style="background: var(--card-bg); padding: 15px; border-radius: 16px; border: 1px solid var(--border); text-align: center; position: relative; overflow: hidden; min-height: 150px;">
+            <h3 style="color: var(--main); font-size: 16px; margin-bottom: 5px;">❤️ لعبة صيد القلوب السريعة</h3>
+            <p style="font-size: 12px; color: #94a3b8; margin-bottom: 10px;">انقري على القلوب الطائرة قبل اختفائها لجمع النقاط!</p>
+            <div style="font-weight: bold; margin-bottom: 10px;">النقاط التي جمعتِها: <span id="heartGameScore" style="color: var(--main);">0</span></div>
+            <button id="btnStartHeartGame" class="btn-nav" style="font-size: 12px; padding: 6px 14px;">ابدئي اللعبة 🕹️</button>
+            <div id="heartGameArea" style="position: relative; width: 100%; height: 100px; border-top: 1px solid var(--border);"></div>
+        </div>
+
+        <button class="btn-nav back-trigger" data-back="pageInteraction">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageMemories">التالي (ذكرياتنا) ➔</button>
+    </div>
+
+    <div class="page" id="pageMemories">
+        <h2>محطات وذكريات محفورة في القلب 🔮✨</h2>
+        <div class="grid-cards">
+            <div class="card-item"><h3>✨ أول ضحكة</h3><p>اليوم اللي سمعت فيه ضحكتك لأول مرة، حسيت إن الدنيا كلها بتضحك معايا وعرفت إني وقعت في حبك.</p></div>
+            <div class="card-item"><h3>💬 أطول مكالمة</h3><p>الساعات اللي كانت بتعدي وكأنها ثواني وإحنا بنحكي عن كل حاجة وعن لا شيء، بس لمجرد سماع صوتك.</p></div>
+            <div class="card-item"><h3>🤫 سرنا الصغير</h3><p>الكلمات المتبادلة والنظرات الغامضة اللي مفيش مخلوق في الكون يفهمها غيري أنا وأنتِ بس.</p></div>
+            <div class="card-item"><h3>🤝 الشدائد والمواقف</h3><p>كل لحظة وقفنا فيها سوا ضد الزعل، وأثبتنا إن حبنا أقوى من أي زعل أو ضغط خارجي.</p></div>
+        </div>
+        <button class="btn-nav back-trigger" data-back="pageGames">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageAlbum">التالي (ألبوم الصور) ➔</button>
+    </div>
+
+    <div class="page" id="pageAlbum">
+        <h2>ألبوم ذكرياتنا الجميلة 📸❤️</h2>
+        <div class="photo-album">
+            <div class="photo-placeholder"><img loading="lazy" src="img1.jpg" alt="" style="display:none; width:100%; height:100%; border-radius:10px;"><span>📸 صورتنا الأولى سوا</span></div>
+            <div class="photo-placeholder"><img loading="lazy" src="img2.jpg" alt="" style="display:none; width:100%; height:100%; border-radius:10px;"><span>🗺️ أول مكان هنزوره</span></div>
+            <div class="photo-placeholder"><img loading="lazy" src="img3.jpg" alt="" style="display:none; width:100%; height:100%; border-radius:10px;"><span>💍 كرت الخطوبة</span></div>
+            <div class="photo-placeholder"><img loading="lazy" src="img4.jpg" alt="" style="display:none; width:100%; height:100%; border-radius:10px;"><span>✨ تفصيلة بنحبها</span></div>
+        </div>
+        <button class="btn-nav back-trigger" data-back="pageMemories">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageChat">التالي (رسائلنا اليومية) ➔</button>
+    </div>
+
+    <div class="page" id="pageChat">
+        <h2>اقتباسات من رسائلنا المفضلة 💬💞</h2>
+        <div class="typewriter-text" id="tp_pageChat"></div>
+        
+        <div style="margin-top: 20px; background: var(--card-bg); padding: 15px; border-radius: 12px; border: 1px solid var(--border); text-align: right;">
+            <h3 style="color: var(--blue); font-size: 15px; margin-bottom: 8px; text-align: center;">📝 اكتبي رسالة لأحمد تظل محفورة هنا</h3>
+            <textarea id="herNoteInput" rows="3" style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg); color: var(--text); border: 1px solid var(--border); font-size: 14px; resize: none;" placeholder="اكتبي ما في قلبكِ هنا وسيقوم الموقع بحفظه..."></textarea>
+            <button id="btnSaveHerNote" class="btn-nav" style="font-size: 12px; padding: 6px 14px; margin-top: 8px; float: left;">حفظ في دفتر اليوميات ✨</button>
+            <div style="clear: both;"></div>
+            <p id="saveNoteFeedback" style="color: #10b981; font-size: 12px; text-align: center; margin-top: 5px; font-weight: bold;"></p>
+        </div>
+
+        <button class="btn-nav back-trigger" data-back="pageAlbum">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageLoveSlider">التالي (مقياس الحب) ➔</button>
+    </div>
+
+    <div class="page" id="pageLoveSlider">
+        <h2>مقياس حبكِ لأحمد؟ 🧪💖</h2>
+        <div class="love-slider-container">
+            <div id="sliderValue" style="font-size:24px; font-weight:bold; color:var(--main);">50%</div>
+            <input type="range" id="loveSliderInput" min="0" max="100" value="50" class="love-slider">
+            <div id="sliderResponse">بانتظار اعترافك الصادق.. 👀</div>
+        </div>
+        <button class="btn-nav back-trigger" data-back="pageChat">رجوع</button>
+        <button class="btn-nav next-trigger" id="sliderNextBtn" data-next="pageVows" style="display:none;">التالي (الوعد الأبدي) ➔</button>
+    </div>
+
+    <div class="page" id="pageVows">
+        <h2>عهد ووعد مكتوب بدموع الفرح 📜 الحبل المتين</h2>
+        <div class="typewriter-text" id="tp_pageVows"></div>
+        <button class="btn-nav back-trigger" data-back="pageLoveSlider">رجوع</button>
+        <button class="btn-nav next-trigger" data-next="pageProposal">التالي (السؤال المنتظر) ➔</button>
+    </div>
+
+    <div class="page" id="pageProposal">
+        <h1 style="font-size: 50px;">💍</h1>
+        <h2>السؤال الأهم وهدف عمري كله 🥹❤️</h2>
+        <p style="font-size: 18px; margin-bottom: 25px;">تقبلي تكملي معايا بقية عمرك وتكوني أميرتي وشريكة حياتي الحلال؟ 👰‍♀️🤵‍♂️</p>
+        <div style="position: relative; min-height: 80px;">
+            <button id="btnAcceptProposal" class="btn-nav" style="background: #10b981; color: white; font-size: 18px;">موافقة طبعاً يا روحي! 😭😭❤️</button>
+            <button id="escapeBtn" class="btn-nav" style="background: #ef4444; color: white; position: absolute;">لأ مش موافقة 😜</button>
+        </div>
+    </div>
+</div>
+
+<div id="celebrationPage">
+    <div style="font-size: 60px; margin-bottom:10px;">📜✨🎆</div>
+    <div class="love-certificate">
+        <div class="medal-badge">🏆 وسام ملكة قلبي</div>
+        <h1 style="color: var(--main); font-size: 26px; margin-bottom: 15px;">🥇 شهادة حب أبدية وثيقة العمر</h1>
+        <p style="font-size: 16px; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+            يشهد هذا الموقع الإلكتروني والكون بأسره، بأن قلب وعقل **أحمد** قد أصبح ملكاً خالصاً وخاضعاً بالكامل لحبيبته وأميرته وعوضه الجميل إلى أبد الآبدين.<br><br>
+            حبيبتي، وصولك لهنا وبصمتك بالموافقة هي أعظم حدث في حياتي كلها. من اليوم ده عهد عليا قدام ربنا إني أحميكي، وأسعدك، وأكون الأمان والبيت اللي بيلجأ ليه قلبك كل ما الدنيا تتعبك. بحبك بحجم الكون وأكتر! 💖
+            <br><br>
+            <span style="color: var(--blue); font-weight: bold; text-align: center; display: block; font-size: 18px;">🌟 وهنا تبدأ حكايتنا للأبد ❤️</span>
+        </p>
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 15px 0;">
+        <div style="display: flex; justify-content: space-between; font-size: 14px; color: var(--blue); font-weight: bold;">
+            <div>✍️ التوقيع: أحمد المحب لكِ للأبد</div>
+            <div id="certificateDate">التاريخ: </div>
+        </div>
+    </div>
+</div>
+
+<div id="secretPage">
+    <div style="font-size: 80px;">💖👑💖</div>
+    <h1 style="color: var(--main); font-size: 36px; margin-top: 15px;">وصلتي للمكان السري في قلبي! ❤️</h1>
+    <p style="max-width: 600px; font-size: 18px; line-height: 1.8; margin-top: 20px;">
+        الكلمة دي هي المفتاح لكل قفل في حياتي. بمجرد ما كتبتيها، النجوم والقلوب اشتعلت علشان تقولك إني غرقان في تفاصيلك وفي حبك. أنتِ المأوى والمكان اللي بهرب ليه من العالم كله. بحبببببككككك! 🥹👑✨
+    </p>
+    <button id="btnCloseSecret" class="btn-nav" style="margin-top: 30px; background: var(--text); color: var(--bg);">العودة ➔</button>
+</div>
+
+<div class="controls-cluster">
+    <div class="music-player-subpanel" id="musicSubpanel">
+        <button id="btnPrevTrack" class="mini-circle-btn">⏮️</button>
+        <span id="currentTrackLabel" style="font-size: 10px; font-weight: bold; color: white;">الأغنية 1</span>
+        <button id="btnNextTrack" class="mini-circle-btn">⏭️</button>
+    </div>
+    <button id="btnToggleMusic" class="circle-btn">🎵</button>
+    <button id="btnToggleTheme" class="circle-btn" style="background:#64748b;">🌗</button>
+</div>
+
+<audio id="bgMusic"></audio>
+
+<audio id="fxSound" src="click-fx.mp3" preload="auto"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

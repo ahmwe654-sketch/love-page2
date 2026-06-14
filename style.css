@@ -1,0 +1,174 @@
+:root {
+    --bg: #060913;
+    --text: #ffffff;
+    --main: #ff4d88;
+    --blue: #38bdf8;
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.12);
+    --panel-bg: rgba(15, 23, 42, 0.9);
+}
+
+body.light {
+    --bg: #f8fafc;
+    --text: #0f172a;
+    --main: #db2777;
+    --blue: #0284c7;
+    --card-bg: rgba(0, 0, 0, 0.03);
+    --border: rgba(0, 0, 0, 0.08);
+    --panel-bg: rgba(255, 255, 255, 0.9);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* سماء سحرية تحتوي على غبار وبتلات متحركة */
+.sky-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(white 1px, transparent 1px), radial-gradient(rgba(255, 77, 136, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px, 100px 100px;
+}
+
+.container {
+    width: 100%; max-width: 780px;
+    background: var(--panel-bg);
+    border-radius: 24px; padding: 35px 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    text-align: center; position: relative; z-index: 10;
+    display: none;
+}
+
+.page {
+    display: none;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.page.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+h2 { color: var(--blue); margin-bottom: 20px; font-size: 26px; }
+
+.typewriter-text {
+    font-size: 17px; line-height: 1.8; margin-bottom: 20px;
+    text-align: justify; white-space: pre-wrap;
+}
+
+.btn-nav {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #060913; border: none; padding: 12px 24px;
+    font-size: 16px; font-weight: bold; border-radius: 12px;
+    cursor: pointer; transition: transform 0.2s ease, box-shadow 0.3s ease; margin: 8px 5px;
+}
+.btn-nav:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3); }
+.btn-nav:active { transform: scale(0.95); }
+
+.btn-sad { background: linear-gradient(135deg, #a855f7, #7c3aed); color: white; }
+.btn-surprise { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+
+.progress-container {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 30px; background: var(--card-bg);
+    padding: 10px; border-radius: 16px; border: 1px solid var(--border);
+    gap: 4px; overflow-x: auto;
+}
+.progress-step { display: flex; flex-direction: column; align-items: center; flex: 1; opacity: 0.25; transition: 0.3s; min-width: 45px; }
+.progress-step.active { opacity: 1; font-weight: bold; }
+.step-icon { font-size: 16px; margin-bottom: 2px; }
+.step-label { font-size: 10px; white-space: nowrap; }
+
+.live-counter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 15px; }
+.counter-item { background: var(--card-bg); padding: 10px; border-radius: 12px; border: 1px solid var(--border); }
+.counter-num { font-size: 22px; font-weight: bold; color: var(--main); }
+.counter-label { font-size: 11px; color: #94a3b8; }
+
+.grid-cards, .photo-album { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+.card-item { background: var(--card-bg); padding: 20px; border-radius: 16px; border: 1px solid var(--border); text-align: right; }
+.card-item h3 { color: var(--main); font-size: 17px; margin-bottom: 6px; }
+
+.photo-placeholder {
+    height: 140px; background: var(--card-bg); border: 2px dashed var(--border);
+    border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #64748b;
+}
+
+.magic-rose { font-size: 65px; cursor: pointer; display: inline-block; transition: 0.5s; }
+.rose-opened { transform: scale(1.25) rotate(360deg); }
+.love-slider-container { background: var(--card-bg); padding: 20px; border-radius: 16px; margin: 20px 0; border: 1px solid var(--border); }
+.love-slider { width: 100%; margin: 15px 0; accent-color: var(--main); cursor: pointer; }
+
+.start-page, #celebrationPage, #secretPage {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--bg); display: flex; flex-direction: column;
+    justify-content: center; align-items: center; z-index: 9999; padding: 20px; text-align: center;
+}
+#celebrationPage, #secretPage { display: none; z-index: 10000; }
+.start-page input {
+    padding: 12px; border-radius: 12px; font-size: 16px; text-align: center;
+    background: var(--card-bg); color: var(--text); border: 1px solid var(--border); width: 250px; margin-top: 15px;
+}
+
+.love-certificate { background: var(--card-bg); border: 2px solid var(--border); padding: 25px; border-radius: 16px; max-width: 500px; width: 100%; position: relative; }
+.medal-badge { background: #f59e0b; color: #060913; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+
+/* عناصر واجهة التحكم والميوزك */
+.controls-cluster { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 11000; align-items: flex-end; }
+.circle-btn { width: 50px; height: 50px; border-radius: 50%; border: none; background: var(--main); color: white; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: 0.2s; }
+.music-player-subpanel { background: rgba(15, 23, 42, 0.95); border: 1px solid var(--border); border-radius: 30px; padding: 6px 12px; display: none; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.mini-circle-btn { background: none; border: none; color: white; cursor: pointer; font-size: 14px; }
+
+/* عناصر المؤثرات البصرية المتساقطة والغبار السحري */
+.confetti, .falling-heart, .magic-sparkle, .falling-petal { position: fixed; pointer-events: none; z-index: 9995; }
+.magic-sparkle { font-size: 12px; animation: fadeSparkle 0.8s ease-out forwards; }
+.falling-petal { font-size: 18px; opacity: 0.7; }
+
+/* أزرار خيارات لعبة التحدي */
+.game-opt-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 10px; border-radius: 10px; cursor: pointer; text-align: right; transition: 0.2s; font-size: 14px; }
+.game-opt-btn:hover { background: rgba(56, 189, 248, 0.15); border-color: var(--blue); }
+
+/* الـ القلوب الطائرة باللعبة المصغرة */
+.click-target-heart { position: absolute; font-size: 26px; cursor: pointer; user-select: none; transition: transform 0.1s; animation: floatUpGame 1.5s linear forwards; }
+
+.crown-icon { display: inline-block; animation: crownBounce 2s infinite ease-in-out; }
+
+@keyframes fadeSparkle {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(1.5) translateY(-20px); opacity: 0; }
+}
+@keyframes floatUpGame {
+    0% { transform: translateY(100px) scale(0.8); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.2); opacity: 0; }
+}
+@keyframes crownBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+@media (max-width: 768px) {
+    .grid-cards, .photo-album, .live-counter-grid { grid-template-columns: 1fr !important; }
+    .step-label { display: none; }
+}
